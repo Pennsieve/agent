@@ -1,0 +1,9 @@
+## Topnav single links
+## if you want to list an external url, use external_url instead of url. the theme will apply a different link base.
+topnav:
+- title: Pennsieve Agent
+  items:
+    - title: GitHub
+      external_url: https://github.com/Pennsieve/agent
+    - title: WebApp
+      external_url: https://app.pennsieve.io/

@@ -1,0 +1,16 @@
+/target/
+**/node_modules
+**/*.rs.bk
+pennsieve-agent-*
+pennsieve_agent-*
+build/
+agent.iml
+.idea/
+macros/target
+migrations/target
+.DS_Store
+*.deb
+*.pkg
+
+# VIM
+*.swp

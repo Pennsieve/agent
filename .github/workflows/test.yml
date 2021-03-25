@@ -1,0 +1,41 @@
+name: Testing
+
+on:
+  pull_request:
+    branches:
+      - main
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - macos-latest
+          - windows-latest
+          - ubuntu-latest
+    steps:
+    - name: Checkout
+      id: checkout
+      uses: actions/checkout@v2
+    - name: Install
+      id: install
+      run: |
+        rustup update
+        rustup component add rustfmt
+    - name: Build
+      id: build
+      run: |
+        cargo update
+        cargo fmt
+        cargo build
+    - name: Test
+      id: test
+      env:
+        PENNSIEVE_API_KEY: ${{ secrets.PENNSIEVE_API_KEY }}
+        PENNSIEVE_SECRET_KEY: ${{ secrets.PENNSIEVE_SECRET_KEY }}
+      run: |
+        cargo test -- --test-threads=1

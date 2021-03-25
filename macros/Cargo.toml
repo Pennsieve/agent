@@ -1,0 +1,8 @@
+[package]
+name = "pennsieve_macros"
+version = "0.1.0"
+authors = ["Pennsieve <https://github.com/Pennsieve/agent>"]
+publish = false
+edition = "2018"
+
+[dependencies]

@@ -1,0 +1,37 @@
+entries:
+- title: Developer docs
+  product: Developer docs
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage.html
+      output: pdf
+      type: frontmatter
+
+  - title: Getting Started
+    output: web, pdf
+    folderitems:
+
+    - title: Installation
+      url: /index.html
+      output: web, pdf
+      type: homepage
+
+    - title: Tutorial 1 - The basics
+      url: /agent_tutorial.html
+      output: web, pdf
+
+    - title: Tutorial 2 - Uploading files
+      url: /agent_tutorial2.html
+      output: web, pdf
+
+  - title: Commands
+    output: web, pdf

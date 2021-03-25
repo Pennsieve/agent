@@ -1,0 +1,137 @@
+{
+  "packageId":"N:package:65da76d6-7a4f-4474-943f-33777ab2c7f8",
+  "channels": [
+    {
+      "iz": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    },
+    {
+      "id": "N:channel:07c54209-b0bd-4363-b49a-3fffd141974c",
+      "rate": 1000
+    }
+  ],
+  "startTime": 0,
+  "endTime": 1000000,
+  "chunkSize": 10000000,
+  "useCache": true
+}

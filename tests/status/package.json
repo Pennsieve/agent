@@ -1,0 +1,19 @@
+{
+  "name": "timeseries-test",
+  "version": "1.0.0",
+  "description": "Pennsieve agent status server test",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "crc-32": "^1.2.0",
+    "google-protobuf": "^3.5.0",
+    "log": "^1.4.0",
+    "uuid": "^3.2.1",
+    "ws": "^4.0.0"
+  }
+}

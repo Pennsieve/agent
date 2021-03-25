@@ -1,0 +1,1 @@
+ALTER TABLE upload_record ADD append INTEGER NOT NULL DEFAULT 0;

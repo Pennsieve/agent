@@ -1,0 +1,18 @@
+{
+  "packageId": "N:package:d4de86ec-5ba8-4288-b697-aab67d9fc2f0",
+  "channels": [
+    {"id":"N:channel:deacb94b-85ec-4169-9254-a5610bb66704","rate": 100},
+    {"id":"N:channel:9e2fb641-1ce4-4094-92dc-c77223f6665a","rate": 100},
+    {"id":"N:channel:72d098b6-0c57-402c-90cf-f87472923427","rate": 100},
+    {"id":"N:channel:804aea76-0d18-40d9-a713-ee7981fcfdd6","rate": 100},
+    {"id":"N:channel:f68e7e3d-8d96-4f03-8eab-921b0a919f21","rate": 100},
+    {"id":"N:channel:ab4f09cd-39bf-48dd-bf4b-fc736b564ae1","rate": 100},
+    {"id":"N:channel:c761db75-4954-41d4-963b-ba91cab16e9e","rate": 100},
+    {"id":"N:channel:2fe47884-c4c2-4084-986d-ea8c3630da09","rate": 100},
+    {"id":"N:channel:095ab09e-1fa7-4b4c-be62-edb6476d6005","rate": 100}
+  ],
+  "startTime": 0,
+  "endTime": 500000000,
+  "chunkSize": 5000000,
+  "useCache": true
+}
