@@ -13,7 +13,7 @@ The Pennsieve Agent is an application that runs natively on Mac, Linux and Windo
 
 ### Windows
 
-Download and install [`Pennsieve-{{ site.data.agent_version }}-x86_64.msi`](http://data.pennsieve.io.s3.amazonaws.com/public-downloads/agent/{{ site.data.agent_version }}/x86_64-pc-windows-msvc/Pennsieve-{{ site.data.agent_version }}-x86_64.msi).
+Download and install [`Pennsieve-{{ site.data.agent_version }}-x86_64.msi`](https://github.com/Pennsieve/agent/releases/download/{{ site.data.agent_version }}/Pennsieve-{{ site.data.agent_version }}-x86_64.msi).
 
 - The Pennsieve home directory will be created in `C:\Users\<user>\.pennsieve`.
 - The agent executable will be installed to `C:\Program Files\Pennsieve\pennsieve.exe`.
@@ -21,7 +21,7 @@ Download and install [`Pennsieve-{{ site.data.agent_version }}-x86_64.msi`](http
 
 ### macOS
 
-Download and install [`pennsieve-{{ site.data.agent_version }}.pkg`](http://data.pennsieve.io.s3.amazonaws.com/public-downloads/agent/{{ site.data.agent_version }}/x86_64-apple-darwin/pennsieve-{{ site.data.agent_version }}.pkg)
+Download and install [`pennsieve-{{ site.data.agent_version }}.pkg`](https://github.com/Pennsieve/agent/releases/download/{{ site.data.agent_version }}/pennsieve-{{ site.data.agent_version }}.pkg).
 
 - The Pennsieve home directory will be created in `/Users/<user>/.pennsieve`.
 - The agent executable will be installed to `/usr/local/opt/pennsieve/bin/pennsieve`.
@@ -30,7 +30,7 @@ Download and install [`pennsieve-{{ site.data.agent_version }}.pkg`](http://data
 
 ### Debian Linux
 
-Download and install [`pennsieve_{{ site.data.agent_version }}_amd64.deb`](http://data.pennsieve.io.s3.amazonaws.com/public-downloads/agent/{{ site.data.agent_version }}/x86_64-unknown-linux-gnu/pennsieve-agent_{{ site.data.agent_version }}_amd64.deb).
+Download and install [`pennsieve_{{ site.data.agent_version }}_amd64.deb`](https://github.com/Pennsieve/agent/releases/download/{{ site.data.agent_version }}/pennsieve_{{ site.data.agent_version }}_amd64.deb).
 
 - The Pennsieve home directory will be created in `/home/<user>/.pennsieve`.
 - The agent executable will be installed to `/opt/pennsieve/bin/pennsieve`.
