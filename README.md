@@ -142,6 +142,11 @@ $ cargo install protobuf-codegen
 $ protoc --rust_out src/ps/proto/ resources/proto/timeseries.proto
 ```
 
+## Deploying
+
+Bump the version in `Cargo.toml`. Tag this commit on the `main` branch and
+push to Github. Github Actions will create a release from here.
+
 ### Code signing
 
 #### Apple
