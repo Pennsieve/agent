@@ -14,7 +14,7 @@ actix = "^0.7"
 actix-net = "^0.2"
 actix-web = "^0.7"
 anymap = "0.12"
-pennsieve-rust = { git = "https://github.com/Pennsieve/pennsieve-rust.git", tag = "v0.14.1" }
+pennsieve-rust = { git = "https://github.com/Pennsieve/pennsieve-rust.git", tag = "v0.15.0" }
 #pennsieve-rust = { path = "../pennsieve-rust" }
 pennsieve_macros = { path = "./macros" }
 pennsieve_migrations = { path = "./migrations" }
