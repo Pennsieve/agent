@@ -1948,7 +1948,7 @@ dependencies = [
 [[package]]
 name = "pennsieve-rust"
 version = "0.13.0"
-source = "git+https://github.com/Pennsieve/pennsieve-rust.git?tag=v0.15.0#2d6c6b38a2466ab03be6b6f3fc1a1d5e3b79e82b"
+source = "git+https://github.com/Pennsieve/pennsieve-rust.git?tag=v0.15.1#28888ea4eb9952255d7f159a4d1eabc38de1581b"
 dependencies = [
  "base64-url",
  "chrono",
