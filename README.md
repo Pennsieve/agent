@@ -144,8 +144,9 @@ $ protoc --rust_out src/ps/proto/ resources/proto/timeseries.proto
 
 ## Deploying
 
-Bump the version in `Cargo.toml`. Tag this commit on the `main` branch and
-push to Github. Github Actions will create a release from here.
+Bump the version in `Cargo.toml` and run `cargo build` to commit the version to
+`Cargo.lock`. Tag this commit on the `main` branch and push to Github. Github
+Actions will create a release from here.
 
 ### Code signing
 
