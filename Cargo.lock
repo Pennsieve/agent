@@ -1883,7 +1883,7 @@ dependencies = [
 
 [[package]]
 name = "pennsieve"
-version = "0.3.2"
+version = "0.3.4"
 dependencies = [
  "actix",
  "actix-net",
