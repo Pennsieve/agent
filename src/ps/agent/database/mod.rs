@@ -16,8 +16,8 @@ use time;
 
 mod error;
 
-use pennsieve_rust::Environment as ApiEnvironment;
 use pennsieve_migrations::Migrations;
+use pennsieve_rust::Environment as ApiEnvironment;
 
 // Re-export:
 pub use self::error::{Error, ErrorKind, Result};
