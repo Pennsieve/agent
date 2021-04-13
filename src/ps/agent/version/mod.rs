@@ -134,16 +134,20 @@ pub fn get_latest_version() -> Future<Version> {
 
 #[cfg(test)]
 mod tests {
+    use std::thread;
+
     use super::*;
 
     #[test]
     fn test_get_latest_version() {
+        thread::sleep(std::time::Duration::from_secs(1));
         let mut rt = tokio::runtime::Runtime::new().unwrap();
         rt.block_on(get_latest_version()).unwrap();
     }
 
     #[test]
     fn test_should_check_for_new_version() {
+        thread::sleep(std::time::Duration::from_secs(1));
         let last_check = None;
         assert!(should_check_for_new_version(last_check));
         let last_check = Some(time::now().to_timespec());
