@@ -3,8 +3,12 @@ use std::result;
 use chrono::Duration;
 use futures::Future as _Future;
 use futures::*;
-use hyper::{Client, Uri};
+use http::{header::USER_AGENT, HeaderMap, HeaderValue};
+use hyper::{Body, Client, Uri};
+use hyper_tls::HttpsConnector;
+use reqwest::ClientBuilder;
 use semver::Version;
+use serde_json::Value;
 
 use crate::ps::agent::config;
 use crate::ps::agent::database::Database;
@@ -72,19 +76,26 @@ pub fn validate_version_is_current() -> Future<()> {
 
 /// Get the most recently released version of the agent
 pub fn get_latest_version() -> Future<Version> {
-    let maybe_uri = [
-        config::constants::VERSION_PATH,
-        config::constants::VERSION_FILE,
-    ]
-    .concat()
-    .parse();
+    let maybe_uri = "https://api.github.com/repos/Pennsieve/agent/releases/latest".parse();
 
     maybe_uri
         .into_future()
         .map_err(Into::into)
         .and_then(|uri: Uri| {
-            Client::new()
-                .get(uri.clone())
+            let https = HttpsConnector::new(1).unwrap();
+            let mut headers = HeaderMap::new();
+            headers.insert(USER_AGENT, HeaderValue::from_static("pennsieve-agent"));
+
+            let request = http::Request::builder()
+                .method("GET")
+                .uri(uri.clone())
+                .header("User-Agent", "pennsieve-agent")
+                .body(Body::empty())
+                .unwrap();
+
+            Client::builder()
+                .build::<_, hyper::Body>(https)
+                .request(request)
                 .map_err(Into::into)
                 .and_then(move |resp| {
                     if resp.status() == 200 {
@@ -98,7 +109,17 @@ pub fn get_latest_version() -> Future<Version> {
                             )
                             .map_err(Into::<Error>::into)
                             .and_then(|v| {
-                                String::from_utf8(v).map(String::from).map_err(Into::into)
+                                String::from_utf8(v)
+                                    .map(|json_string| {
+                                        let json: Value = serde_json::from_str(&json_string)
+                                            .expect("Could not parse GitHub response as JSON.");
+                                        json["tag_name"]
+                                            .clone()
+                                            .as_str()
+                                            .expect("Could not parse `tag_name` as a string")
+                                            .to_string()
+                                    })
+                                    .map_err(Into::into)
                             })
                             .into_trait()
                     } else {
@@ -111,26 +132,35 @@ pub fn get_latest_version() -> Future<Version> {
         .into_trait()
 }
 
-//#[test]
-//fn test_get_latest_version() {
-//    let mut rt = tokio::runtime::Runtime::new().unwrap();
-//    rt.block_on(get_latest_version()).unwrap();
-//}
+// #[cfg(test)]
+// mod tests {
+//     use std::thread;
 
-//#[test]
-//fn test_should_check_for_new_version() {
-//    let last_check = None;
-//    assert!(should_check_for_new_version(last_check));
-//    let last_check = Some(time::now().to_timespec());
-//    assert!(!should_check_for_new_version(last_check));
-//    let last_check = Some((time::now() - Duration::hours(4)).to_timespec());
-//    assert!(!should_check_for_new_version(last_check));
-//    let last_check = Some(
-//        (time::now()
-//            - Duration::seconds(
-//                1 + config::constants::AGENT_LATEST_RELEASE_CHECK_INTERVAL_SECS as i64,
-//            ))
-//        .to_timespec(),
-//    );
-//    assert!(should_check_for_new_version(last_check));
-//}
+//     use super::*;
+
+//     #[test]
+//     fn test_get_latest_version() {
+//         thread::sleep(std::time::Duration::from_secs(1));
+//         let mut rt = tokio::runtime::Runtime::new().unwrap();
+//         rt.block_on(get_latest_version()).unwrap();
+//     }
+
+//     #[test]
+//     fn test_should_check_for_new_version() {
+//         thread::sleep(std::time::Duration::from_secs(1));
+//         let last_check = None;
+//         assert!(should_check_for_new_version(last_check));
+//         let last_check = Some(time::now().to_timespec());
+//         assert!(!should_check_for_new_version(last_check));
+//         let last_check = Some((time::now() - Duration::hours(4)).to_timespec());
+//         assert!(!should_check_for_new_version(last_check));
+//         let last_check = Some(
+//             (time::now()
+//                 - Duration::seconds(
+//                     1 + config::constants::AGENT_LATEST_RELEASE_CHECK_INTERVAL_SECS as i64,
+//                 ))
+//             .to_timespec(),
+//         );
+//         assert!(should_check_for_new_version(last_check));
+//     }
+// }

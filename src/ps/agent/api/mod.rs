@@ -9,7 +9,7 @@ use futures::*;
 use futures::{Future as _Future, IntoFuture};
 
 use pennsieve_rust::api::response;
-use pennsieve_rust::{model, Pennsieve, Config, Environment as ApiEnvironment};
+use pennsieve_rust::{model, Config, Environment as ApiEnvironment, Pennsieve};
 
 use crate::ps::agent;
 pub use crate::ps::agent::api::error::{Error, ErrorKind, Result};

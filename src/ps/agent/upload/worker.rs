@@ -12,9 +12,9 @@ use itertools::Itertools;
 use log::*;
 use tokio::timer::{Delay, Interval};
 
+use pennsieve_macros::try_future;
 use pennsieve_rust::api::{ProgressCallback, ProgressUpdate};
 use pennsieve_rust::model;
-use pennsieve_macros::try_future;
 
 use crate::ps::agent::api::Api;
 use crate::ps::agent::database::{Database, UploadRecord, UploadStatus};

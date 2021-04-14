@@ -1,4 +1,5 @@
- //! Upload related errors
+
+//! Upload related errors
 use failure::{Backtrace, Context, Fail};
 use std::path::PathBuf;
 use std::{fmt, io, result};
