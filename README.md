@@ -20,16 +20,29 @@ A client responsible for running on a host machine and interfacing with the Penn
 
 ## Building
 
-Build artifacts reside in the `${PROJECT_ROOT}/target` directory. The following
-commands will work across all major platforms:
 
-- Windows
-- macOs
-- Linux (Debian)
+Install `rustup`, the [Rust toolchain manager](https://rustup.rs/):
 
-### Compiling
+``` bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+When prompted, proceed with the default installation. After installation is complete, add the Rust compiler to your path:
+
+``` bash
+source $HOME/.cargo/env
+```
+
+Clone this repository:
+
+``` bash
+git clone https://github.com/Pennsieve/agent.git
+cd agent
+```
 
 #### Production
+
+Run the following to build an optimized production-ready binary:
 
 ```bash
 $ cargo build --release
@@ -38,6 +51,8 @@ $ cargo build --release
 Will output to `${PROJECT_ROOT}/target/release/pennsieve`.
 
 #### Debug
+
+Use the debug build when developing locally:
 
 ```bash
 $ cargo build
@@ -48,7 +63,7 @@ Will output to `${PROJECT_ROOT}/target/debug/pennsieve`.
 This release will contain additional logging output (along with being a lot
 faster to compile).
 
-### Generating Documentation
+## Documentation
 
 #### End-User
 
@@ -78,7 +93,7 @@ Additionally, you can view the documentation directly in your browser via
 $ cargo doc --open
 ```
 
-## Testing
+## Testing and Developement
 
 To run the Pennsieve agent test suite, run
 
@@ -103,35 +118,6 @@ environment=development
 
 Alternatively, if you are using environment variables to configure the agent, you would set the `PENNSIEVE_API_ENVIRONMENT` environment variable to "development".
 
-## Packaging
-
-Running `make` in `${PROJECT_ROOT}` will create an installation package in the
-same directory.
-
-Depending on the operating system, the installer will either be an
-`.msi` (Windows), `.pkg` (macOS), or `.deb` (Debian-based Linux distributions).
-
-
-## Releasing
-
-To build a release for the Pennsieve agent, create an _unannotated_ Git tag and
-push it to GitHub.
-
-Tagged release builds are placed in a S3 bucket by Jenkins. They are located
-at
-
-```
-s3://data.pennsieve.io/public-downloads/agent/${TAG}
-```
-
-The latest release is available at
-
-```
-s3://data.pennsieve.io/public-downloads/agent/latest
-```
-
-## Development
-
 ### Generating code from Protobuf definitions
 
 After making the required changes to `resources/proto/timeseries.proto`, you need to run the following commands:
@@ -142,11 +128,21 @@ $ cargo install protobuf-codegen
 $ protoc --rust_out src/ps/proto/ resources/proto/timeseries.proto
 ```
 
-## Deploying
+## Packaging
+
+Running `make` in `${PROJECT_ROOT}` will create an installation package in the
+same directory.
+
+Depending on the operating system, the installer will either be an
+`.msi` (Windows), `.pkg` (macOS), or `.deb` (Debian-based Linux distributions).
+
+## Releasing
 
 Bump the version in `Cargo.toml` and run `cargo build` to commit the version to
-`Cargo.lock`. Tag this commit on the `main` branch and push to Github. Github
-Actions will create a release from here.
+`Cargo.lock`. Tag this commit on the `main` branch with an _unannontated_ tag
+and push to Github. Github Actions will create a release from here.
+
+Binaries are available in Github Releases: https://github.com/Pennsieve/agent/releases
 
 ### Code signing
 
