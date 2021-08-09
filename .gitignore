@@ -11,6 +11,7 @@ migrations/target
 .DS_Store
 *.deb
 *.pkg
+Cargo.lock
 
 # VIM
 *.swp

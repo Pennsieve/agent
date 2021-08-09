@@ -15,7 +15,7 @@ actix-net = "^0.2"
 actix-web = "^0.7"
 anymap = "0.12"
 pennsieve-rust = { git = "https://github.com/Pennsieve/pennsieve-rust.git", tag = "v0.15.2" }
-#pennsieve-rust = { path = "../pennsieve-rust" }
+# pennsieve-rust = { path = "../pennsieve-rust" }
 pennsieve_macros = { path = "./macros" }
 pennsieve_migrations = { path = "./migrations" }
 byteorder = "^1.2"
@@ -33,7 +33,7 @@ itertools = "^0.7"
 lazy_static = "^1.1"
 log4rs = "^0.8"
 log-mdc = "^0.1"
-futures = "^0.3"
+futures = "^0.1"
 futures-cpupool = "^0.1"
 http = "^0.1"
 human-panic = "^1.0"
@@ -51,7 +51,7 @@ r2d2_sqlite = "^0.8"
 rand = "^0.5"
 rusqlite = { version = "^0.16", features = ["functions", "blob", "limits", "chrono", "serde_json", "bundled"] }
 reqwest = "^0.9"
-rustc_version = "^0.2"
+rustc_version = "^0.4.0"
 rustyline = "^5.0"
 rust-ini = "^0.12"
 semver = "^0.9"
@@ -70,7 +70,7 @@ tungstenite = "^0.6"
 url = "^1.7"
 
 [build-dependencies]
-rustc_version = "^0.2"
+rustc_version = "0.4.0"
 
 [dev-dependencies]
 pennsieve_macros = { path = "./macros" }

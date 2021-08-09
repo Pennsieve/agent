@@ -230,7 +230,7 @@ impl Request {
         let page_start = get_start(self.start, period, page_size);
         let page_end = get_end(self.end, period, page_size);
 
-        (page_start..page_end)
+        page_start..page_end
     }
 
     /// Returns a timeseries response.

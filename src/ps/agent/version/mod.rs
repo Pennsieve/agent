@@ -6,7 +6,7 @@ use futures::*;
 use http::{header::USER_AGENT, HeaderMap, HeaderValue};
 use hyper::{Body, Client, Uri};
 use hyper_tls::HttpsConnector;
-use reqwest::ClientBuilder;
+// use reqwest::ClientBuilder;
 use semver::Version;
 use serde_json::Value;
 

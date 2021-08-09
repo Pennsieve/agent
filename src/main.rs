@@ -289,7 +289,7 @@ impl Context {
                 // if successful, memoize the result and return that in
                 // subsequent calls:
                 let api = api::Api::new(&self.db, &config, user_profile.environment);
-                mem::replace(&mut self.api, Some(api.clone()));
+                self.api = Some(api.clone());
                 Ok(api)
             }
         }
@@ -304,7 +304,7 @@ impl Context {
             // Otherwise, attempt to read it from disk, then parse it:
             None => {
                 let config = Config::from_config_file_and_environment()?;
-                mem::replace(&mut self.config, Some(config.clone()));
+                self.config = Some(config.clone());
                 Ok(config)
             }
         }

@@ -6,7 +6,7 @@ use std::path::PathBuf;
 use std::{iter, result};
 
 use futures::*;
-use futures::{Future as _Future, IntoFuture};
+use futures::{Future as _Future};
 
 use pennsieve_rust::api::response;
 use pennsieve_rust::{model, Config, Environment as ApiEnvironment, Pennsieve};
