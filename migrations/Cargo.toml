@@ -6,4 +6,4 @@ publish = false
 edition = "2018"
 
 [dependencies]
-rust-embed = "^4.2.0"
+rust-embed = "^6.3.0"
